@@ -3,8 +3,15 @@
 ## Проект
 Классичесская Игра "Snake" на PyGame, с новыми технологиями и фичами)
 
-## Макет сделанный в paint)
+## Макет игры сделанный в paint)
 ![2022-12-03_16-54-13](https://user-images.githubusercontent.com/94148371/205493532-5135a7ae-e3b6-4873-a666-17e935855160.png)
+
+## Макет входного экрана сдланный в paint)
+![Входной экран](https://user-images.githubusercontent.com/94148371/206912949-ee8cec14-f489-4be3-8c7f-1cfcd1f3270e.png)
+
+
+## Макет паузы сдланный в paint)
+![Пауза](https://user-images.githubusercontent.com/94148371/206912956-29eddc5a-1f80-4199-bd9d-ace23daa3b14.png)
 
 
 ## Фичи проекта
