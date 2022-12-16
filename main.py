@@ -14,7 +14,7 @@ pygame.display.set_caption("Змейка")
 clock = pygame.time.Clock()
 FPS = 45
 
-# Игровые переменные
+# Игровые переменные, надо исправить код, чтобы они не были глобальными
 running = True
 color_fone = (160, 82, 45)
 white = (255, 255, 255)
@@ -31,6 +31,12 @@ size = [size_block * count_blocks + 2 * size_block + margin * count_blocks,
 
 screen = pygame.display.set_mode(size)
 courier = pygame.font.SysFont('courier', 36)
+
+# Музыка
+#ding_musique4 = pygame.mixer.music.load('musique4.wav')
+#pygame.mixer.init()
+#pygame.mixer.music.set_volume(0.4) 
+#pygame.mixer.music.play(loops=-1)
 
 
 class SnakeBlock:
@@ -62,6 +68,7 @@ def draw_block(color, row, column):
                                      size_block])
 
 
+# Игровые переменные, надо исправить код, чтобы они не были глобальными
 snake_blocks = [SnakeBlock(9, 8), SnakeBlock(9, 9), SnakeBlock(9, 10)]
 apple = get_random_empty_block()
 d_row = buf_row = 0
@@ -69,7 +76,8 @@ d_col = buf_col = 1
 total = 0
 speed = 1
 
-#Игровой цикл
+
+#Игровой цикл, который в будущем будет храниться в классу SnakeRunning
 while running:
     clock.tick(FPS)
     #Обработка событий
@@ -111,6 +119,12 @@ while running:
 
     head = snake_blocks[-1]
     if not head.is_inside():
+        
+        pygame.mixer.music.load('game_fail.mp3')
+        pygame.mixer.init()
+        pygame.mixer.music.set_volume(0.4)
+        pygame.mixer.music.play(loops=1)
+        
         print('crash')
         pygame.quit()
         sys.exit()
@@ -124,6 +138,12 @@ while running:
         speed = total // 5 + 1
         snake_blocks.append(apple)
         apple = get_random_empty_block()
+        
+        pygame.mixer.music.load('ding.mp3')
+        pygame.mixer.init()
+        pygame.mixer.music.set_volume(0.4)
+        pygame.mixer.music.play(loops=1)
+
 
     d_row = buf_row
     d_col = buf_col
@@ -132,6 +152,12 @@ while running:
     # snake_blocks.pop(0)
 
     if new_head in snake_blocks:
+        
+        pygame.mixer.music.load('game_fail.mp3')
+        pygame.mixer.init()
+        pygame.mixer.music.set_volume(0.4)
+        pygame.mixer.music.play(loops=1)
+        
         print('crash yourself')
         pygame.quit()
         sys.exit()
