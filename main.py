@@ -1,7 +1,8 @@
-import pygame
 import sys
 import random
-# import pygame_menu идея в будущем использовать для главного меню
+
+import pygame
+# import pygame_menu - идея в будущем использовать для главного меню
 pygame.init()
 
 # Настройки и создание окна
