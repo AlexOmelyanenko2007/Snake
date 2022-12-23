@@ -15,7 +15,7 @@ pygame.display.set_caption("Змейка")
 clock = pygame.time.Clock()
 FPS = 45
 
-# Игровые переменные, надо исправить код, чтобы они не были глобальными
+# Игровые переменные, надо исправить код, чтобы они не были глобальными для этого создадим def main():
 running = True
 color_fone = (160, 82, 45)
 white = (255, 255, 255)
@@ -78,10 +78,10 @@ total = 0
 speed = 1
 
 
-#Игровой цикл, который в будущем будет храниться в классу SnakeRunning
+# Игровой цикл, который в будущем будет храниться в классу SnakeRunning
 while running:
     clock.tick(FPS)
-    #Обработка событий
+    # Обработка событий
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             print('exit')
@@ -168,6 +168,3 @@ while running:
 
     pygame.display.flip()
     clock.tick(3 + speed)
-
-
-
