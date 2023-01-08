@@ -4,10 +4,12 @@
 Классичесская Игра "Snake" на PyGame, с новыми технологиями и фичами)
 
 ## Макет игры сделанный в paint)
-![2022-12-03_16-54-13](https://user-images.githubusercontent.com/94148371/205493532-5135a7ae-e3b6-4873-a666-17e935855160.png)
+![Макет игры](https://user-images.githubusercontent.com/94148371/211221724-42bf6f1c-77ee-44c0-84ea-eecdbe577ae2.png)
+
 
 ## Макет входного экрана сдланный в paint)
-![Входной экран](https://user-images.githubusercontent.com/94148371/206912949-ee8cec14-f489-4be3-8c7f-1cfcd1f3270e.png)
+![Входной экран](https://user-images.githubusercontent.com/94148371/211221736-a6485e1d-09bb-4075-b78b-82947fb80109.png)
+
 
 
 ## Макет паузы сдланный в paint)
