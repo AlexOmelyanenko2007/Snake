@@ -32,3 +32,4 @@
 - Python 3.7.9
 - PyGame 2.1.2
 - pygame_menu 4.2.8
+- pygame-widgets 1.1.0
