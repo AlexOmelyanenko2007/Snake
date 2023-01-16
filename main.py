@@ -14,7 +14,7 @@ pygame.init()
 # Настройки, создание окна и загрузка картинок
 x = 400
 y = 600
-bg_image = pygame.image.load("menu.png")
+bg_image = pygame.image.load("resources/menu.png")
 pygame.display.set_caption("Змейка")
 
 # Игровые переменные
@@ -103,8 +103,8 @@ class MapSnake:
 
 class MusicSnake:
     musics = {
-        'default': 'musique4.wav',
-        'ghostbusters': 'ghostbusters.mp3'
+        'default': 'resources/musique4.wav',
+        'ghostbusters': 'resources/ghostbusters.mp3'
     }
 
     now_music = 'default'
@@ -283,20 +283,20 @@ class Game:
         self.load_score_table()
 
     def init_sound(self):
-        self.apple_sound = pygame.mixer.Sound('apple.ogg')
-        self.good_apple_sound = pygame.mixer.Sound('good_apple.ogg')
-        self.bad_apple_sound = pygame.mixer.Sound('bad_apple.ogg')
-        self.game_fail_sound = pygame.mixer.Sound('game_fail.ogg')
-        self.game_start_sound = pygame.mixer.Sound('game_start.ogg')
+        self.apple_sound = pygame.mixer.Sound('resources/apple.ogg')
+        self.good_apple_sound = pygame.mixer.Sound('resources/good_apple.ogg')
+        self.bad_apple_sound = pygame.mixer.Sound('resources/bad_apple.ogg')
+        self.game_fail_sound = pygame.mixer.Sound('resources/game_fail.ogg')
+        self.game_start_sound = pygame.mixer.Sound('resources/game_start.ogg')
 
     def load_images(self):
-        self.snake_sprite['head'] = pygame.image.load('snake-head.png')
-        self.snake_sprite['middle'] = pygame.image.load('snake-body.png')
-        self.snake_sprite['corner'] = pygame.image.load('snake-corner.png')
-        self.snake_sprite['tail'] = pygame.image.load('snake-tail.png')
-        self.snake_sprite['apple'] = pygame.image.load('apple.png')
-        self.snake_sprite['good_apple'] = pygame.image.load('good_apple.png')
-        self.snake_sprite['bad_apple'] = pygame.image.load('bad_apple.png')
+        self.snake_sprite['head'] = pygame.image.load('resources/snake-head.png')
+        self.snake_sprite['middle'] = pygame.image.load('resources/snake-body.png')
+        self.snake_sprite['corner'] = pygame.image.load('resources/snake-corner.png')
+        self.snake_sprite['tail'] = pygame.image.load('resources/snake-tail.png')
+        self.snake_sprite['apple'] = pygame.image.load('resources/apple.png')
+        self.snake_sprite['good_apple'] = pygame.image.load('resources/good_apple.png')
+        self.snake_sprite['bad_apple'] = pygame.image.load('resources/bad_apple.png')
 
     # Используется исключительно для фона в виде шашечек
     def draw_block(self, color, row, column):
@@ -649,4 +649,3 @@ while True:
     game.update()
     pygame.display.update()
     # pygame_widgets.update(events)  # Call once every loop to allow widgets to render and listen
-
