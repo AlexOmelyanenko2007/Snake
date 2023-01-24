@@ -31,7 +31,6 @@ courier = pygame.font.SysFont('courier', 24)
 Класс StateSystem используется чтобы внедрить состояние нашего приложения
 """
 
-
 class StateSystem:
     state = 'main'
 
@@ -53,6 +52,9 @@ class StateSystem:
     # пауза
     def open_pause(self):
         self.state = 'pause'
+
+    def open_game_over(self):
+        self.state = 'game over'
 
     # таблица рекордов
     def open_scores(self):
@@ -155,6 +157,7 @@ class Game:
     menu_pause = None
     menu_preferences = None
     menu_scores = None
+    menu_game_over = None
 
     # База нашей змейки
     snake_blocks = [SnakeBlock(9, 8), SnakeBlock(9, 9), SnakeBlock(9, 10)]
@@ -212,6 +215,7 @@ class Game:
         self.init_pause_menu()
         self.init_preferences_menu()
         self.init_scores_menu()
+        self.init_game_over_menu()
         self.load_images()
 
     # Обновление картинки
@@ -241,6 +245,10 @@ class Game:
             if self.menu_scores.is_enabled():
                 self.menu_scores.update(events)
                 self.menu_scores.draw(screen)
+        elif self.state.get_state() == 'game over':
+            if self.menu_game_over.is_enabled():
+                self.menu_game_over.update(events)
+                self.menu_game_over.draw(screen)
         else:
             self.start_the_game()
 
@@ -259,6 +267,7 @@ class Game:
 
         self.menu_pause.add.button('Назад', lambda: self.state.open_game())
         self.menu_pause.add.button('Настройки', self.preferences)
+        self.menu_pause.add.button('Главное меню', lambda: self.state.open_main())
         self.menu_pause.add.button('Выход', pygame_menu.events.EXIT)
 
     def init_preferences_menu(self):
@@ -281,6 +290,14 @@ class Game:
 
         self.table_scores = self.menu_scores.add.table(table_id='my_table', font_size=20)
         self.load_score_table()
+
+    def init_game_over_menu(self):
+        self.menu_game_over = pygame_menu.Menu('Поражение', 300, 300,
+                                           theme=self.main_theme)
+
+        self.menu_game_over.add.button('Заново', lambda: self.state.open_game())
+        self.menu_game_over.add.button('Главное меню', lambda: self.state.open_main())
+        self.menu_game_over.add.button('Выход', pygame_menu.events.EXIT)
 
     def init_sound(self):
         self.apple_sound = pygame.mixer.Sound('resources/apple.ogg')
@@ -594,7 +611,7 @@ class Game:
         self.d_col = self.buf_col = 1
         self.total = 0
         self.speed = 1
-        self.state.open_main()
+        self.state.open_game_over()
 
     # вспомогательное открытие настроек
     def preferences(self):
@@ -643,9 +660,11 @@ class Game:
             self.table_scores.add_row([r[0], r[1]], cell_font_color=(30, 30, 30))
 
 
-game = Game()
+def main():
+    game = Game()
+    while True:
+        game.update()
+        pygame.display.update()
 
-while True:
-    game.update()
-    pygame.display.update()
-    # pygame_widgets.update(events)  # Call once every loop to allow widgets to render and listen
+if __name__ == '__main__':
+    main()
