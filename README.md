@@ -3,16 +3,17 @@
 ## Проект
 Классичесская Игра "Snake" на PyGame, с новыми технологиями и фичами)
 
-## Макет игры сделанный в paint)
-![Макет игры](https://user-images.githubusercontent.com/94148371/211221724-42bf6f1c-77ee-44c0-84ea-eecdbe577ae2.png)
+## Макет игры 
+![211221724-42bf6f1c-77ee-44c0-84ea-eecdbe577ae2](https://github.com/AlexOmelyanenko2007/Snake/assets/94148371/aa71d254-29a7-4e6c-9442-5200a7dfbbeb)
 
 
-## Макет входного экрана сдланный в paint)
-![Входной экран](https://user-images.githubusercontent.com/94148371/211221736-a6485e1d-09bb-4075-b78b-82947fb80109.png)
+## Макет входного экрана
+![211221736-a6485e1d-09bb-4075-b78b-82947fb80109](https://github.com/AlexOmelyanenko2007/Snake/assets/94148371/48fa0481-07b4-4790-9fd3-49da0f84adbb)
 
 
-## Макет паузы сдланный в paint)
-![Пауза](https://user-images.githubusercontent.com/94148371/206912956-29eddc5a-1f80-4199-bd9d-ace23daa3b14.png)
+## Макет паузы 
+![206912956-29eddc5a-1f80-4199-bd9d-ace23daa3b14](https://github.com/AlexOmelyanenko2007/Snake/assets/94148371/8f05826d-8743-4728-99da-52c99e57be86)
+
 
 
 ## Диаграмма-классов
